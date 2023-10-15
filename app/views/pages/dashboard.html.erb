@@ -1,0 +1,20 @@
+<body class="container-color">
+  <div class="container">
+    <h1 class="mt-4">Hello <%= current_user.first_name %>!</h1>
+    <% if current_user.trips.any? %>
+      <%= render partial: 'planned_trips' %>
+      <% else %>
+      <%= render partial: 'nothing' %>
+    <% end %>
+
+    <div class="mt-4">
+      <h2>Need Inspiration?</h2>
+      <div class="row">
+        <div class="col-6 img-card">
+          <%= image_tag "tokyo.jpg", class:"img-card-image" %>
+          <h2 class="img-card-text">Tokyo</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

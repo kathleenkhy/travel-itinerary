@@ -1,0 +1,56 @@
+.teal-button {
+  border-radius: 10px;
+  background-color: #83C5BE;
+  display: inline;
+  padding: 8px 12px;
+  color: black;
+  margin: 16px 0;
+  text-decoration: none;
+}
+
+.teal-button:hover {
+  border-radius: 10px;
+  background-color: #588783;
+  color: white;
+  display: inline;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.brown-button {
+  border-radius: 10px;
+  background-color: #E29578;
+  display: inline;
+  padding: 8px 12px;
+  color: black;
+  text-decoration: none;
+}
+
+.brown-button:hover {
+  border-radius: 10px;
+  background-color: #a56c57;
+  color: white;
+  display: inline;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.forget-password {
+  color: rgb(73, 72, 72);
+}
+
+.delete-button {
+  border-radius: 4px;
+  background-color: #ec4204;
+  display: inline;
+  padding: 8px 12px;
+  color: white;
+}
+
+.delete-button:hover {
+  border-radius: 4px;
+  background-color: #e7521c;
+  display: inline;
+  padding: 8px 12px;
+  color: white;
+}

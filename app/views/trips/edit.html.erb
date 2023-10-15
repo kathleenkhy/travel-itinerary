@@ -1,0 +1,16 @@
+<body class="container-color">
+  <div class="container mt-3">
+  <%= link_to "Back", user_trip_path(current_user, @trip), class:"teal-button text-decoration-none" %>
+    <div class="my-5">
+      <%= simple_form_for([current_user, @trip]) do |f| %>
+        <%= f.input :name, required: true %>
+        <%= f.input :country, as: :string, required: false %>
+        <%= f.input :start, required: true %>
+        <%= f.input :end, required: true %>
+        <div class="text-end">
+          <%= f.button :submit, class:"brown-button my-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

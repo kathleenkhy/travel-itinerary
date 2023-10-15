@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-between">
+  <h3 class="mt-4">Planned Trips</h3>
+  <%= link_to "Create a new trip", new_user_trip_path(current_user), class:"teal-button text-decoration-none me-3" %>
+</div>
+
+
+<div>
+  <%= link_to user_trip_path(current_user, current_user.trips[-1]), class:"link-text" do %>
+    <div class="row">
+      <div class="trip-card col-2 ms-3">
+        <p class="day-text mb-0"><%= current_user.trips[-1].start.strftime("%a") %></p>
+        <h3 class="mb-0"><%= current_user.trips[-1].start.day %></h3>
+        <p class="month-text mb-0"><%= current_user.trips[-1].start.strftime("%b") %></p>
+      </div>
+
+      <div class="trip-card col-9 d-flex flex-column justify-content-center">
+        <h4><%= current_user.trips[-1].name %></h4>
+        <p class="mb-0"><%= current_user.trips[-1].country %></p>
+      </div>
+    </div>
+  <% end %>
+  <% if current_user.trips.length >= 2 %>
+    <%= link_to user_trip_path(current_user, current_user.trips[-2]), class:"link-text" do %>
+      <div class="row">
+        <div class="trip-card col-2 ms-3 mt-2">
+          <p class="day-text mb-0"><%= current_user.trips[-2].start.strftime("%a") %></p>
+          <h3 class="mb-0"><%= current_user.trips[-2].start.day %></h3>
+          <p class="month-text mb-0"><%= current_user.trips[-1].start.strftime("%b") %></p>
+        </div>
+        <div class="trip-card mt-2 col-9 d-flex flex-column justify-content-center">
+          <h4><%= current_user.trips[-2].name %></h4>
+          <p class="mb-0"><%= current_user.trips[-2].country %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <% if current_user.trips.length >= 3 %>
+    <%= link_to user_trip_path(current_user, current_user.trips[-3]), class:"link-text" do %>
+      <div class="row">
+        <div class="trip-card col-2 ms-3 mt-2">
+          <p class="day-text mb-0"><%= current_user.trips[-3].start.strftime("%a") %></p>
+          <h3 class="mb-0"><%= current_user.trips[-3].start.day %></h3>
+          <p class="month-text mb-0"><%= current_user.trips[-1].start.strftime("%b") %></p>
+        </div>
+        <div class="trip-card mt-2 col-9 d-flex flex-column justify-content-center">
+          <h4><%= current_user.trips[-3].name %></h4>
+          <p class="mb-0"><%= current_user.trips[-3].country %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <br>
+  <div class="text-end">
+    <%= link_to "See all trip itineraries", user_trips_path(current_user), class:"brown-button text-decoration-none mt-5 me-3" %>
+  </div>
+</div>

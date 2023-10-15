@@ -1,0 +1,15 @@
+ <body class="container-color">
+  <div class="container mt-5">
+  <%= link_to "All trips", user_trips_path(current_user), class:"teal-button" %>
+    <h1 class="mt-4">Create a new Trip</h1>
+    <%= simple_form_for [current_user, @trip] do |f| %>
+      <%= f.input :name, required: true %>
+      <%= f.input :country, as: :string, required: false %>
+      <%= f.input :start, required: true %>
+      <%= f.input :end, required: true %>
+      <div class="text-end">
+        <%= f.button :submit, "Create Trip", class:"brown-button" %>
+      </div>
+    <% end %>
+  </div>
+ </body>

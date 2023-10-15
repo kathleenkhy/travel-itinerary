@@ -1,0 +1,72 @@
+.header {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-color {
+  background-color: #fff8f4;
+}
+
+.content-banner {
+  background-color: #FFF2EB;
+  height: 100vh;
+}
+
+.img-banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(72, 72, 72, 0.5);
+  }
+}
+
+.img-banner img {
+  width:100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-banner-smaller {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(72, 72, 72, 0.5);
+  }
+}
+
+.img-banner-smaller img {
+  width:100%;
+  height: 30vh;
+  object-fit: cover;
+}
+
+.banner-text {
+  position: absolute;
+  top: 50%; /* Vertically center text */
+  left: 50%; /* Horizontally center text */
+  transform: translate(-50%, -50%); /* Center text perfectly */
+  color: white; /* Text color */
+  font-size: 36px; /* Adjust font size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for contrast */
+  z-index: 1; /* Place text above the image */
+}

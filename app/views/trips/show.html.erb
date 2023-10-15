@@ -1,0 +1,43 @@
+<body class="container-color">
+  <div class="container mt-3">
+  <%= link_to "Back", user_trips_path(current_user), class:"teal-button" %>
+    <div class="d-flex justify-content-between mt-4">
+      <h1>
+        Trip: <%= @trip.name %>
+        <%= link_to edit_user_trip_path(current_user, @trip), class:"link-pencil-icon fs-4 mt-0" do %>
+          <i class="fa-solid fa-pencil"></i>
+        <% end %>
+      </h1>
+      <div class="text-end me-5">
+      <%= link_to "Delete Trip", user_trip_path(current_user, @trip),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "btn delete-button"
+      %>
+    </div>
+  </div>
+    <h3><%= @trip.country if !@trip.country.empty? %></h3>
+    <h5><%= @trip.start %> to <%= @trip.end %></h5>
+    <div>
+    <div class="row mx-auto mb-5">
+      <% @trip.date_range.each do |date| %>
+        <div class="trip-smaller-card my-2 col-2">
+          <span class="day-text my-0 "><%= date.strftime("%a") %></span> <br>
+          <span class="month-text"><%= date.day %></span>
+          <span class="month-text"><%= date.strftime("%b") %></span>
+          <%= date.year %>
+        </div>
+        <div class="trip-smaller-card my-2 col-10 d-flex justify-content-between">
+          <p>there's nothing here</p>
+          <div class="d-flex align-items-center me-2">
+            <%= link_to new_user_trip_itinerary_path(current_user, @trip), class:"link-teal-icon fs-3" do %>
+              <i class="fa-solid fa-circle-plus"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  </div>
+
+
+</body>

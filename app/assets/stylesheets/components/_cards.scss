@@ -1,0 +1,89 @@
+.form-card {
+  border: 2px solid rgb(221, 221, 221);
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  background-color: #F4F4F4;
+  border-radius: 10px;
+  padding: 12px 24px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.trip-card {
+  border: 2px solid white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  background-color: #F4F4F4;
+  border-radius: 4px;
+  padding: 12px 24px;
+}
+
+.trip-smaller-card {
+  background-color: #fbfafa;
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.summary-card {
+  border: 2px solid #E29578;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  border-radius: 10px;
+  padding: 24px;
+  width: 100%;
+}
+
+.img-card {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 22px;
+  color: white;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(72, 72, 72, 0.5);
+  }
+}
+
+.img-card-image {
+  height: 150px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1; /* Ensure the image is on top */
+}
+
+.img-card-text {
+  position: relative;
+  z-index: 2; /* Place the text on top of the image */
+}
+
+@media screen and (min-width: 700px) {
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  /* For a screen < 960px, this CSS will be read */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

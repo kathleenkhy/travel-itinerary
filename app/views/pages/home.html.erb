@@ -1,2 +1,15 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="content-banner">
+  <div class="img-banner">
+    <%= image_tag "mountains.jpg" %>
+    <div class="banner-text text-center">
+      <h1 class="hero-header">Travel Itinerary Generator</h1>
+      <h4 class="mt-5 mb-2">Plan your next adventure</h4>
+      <%= link_to new_user_session_path, class:"text-decoration-none" do %>
+        <button class="btn teal-button">
+          Log In
+        </button>
+      <% end %>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<body class="container-color">
+  <div class="container mt-3">
+    <%= link_to "Back", user_trip_path(current_user, @trip), class:"teal-button text-decoration-none" %>
+    <div class="mt-5">
+      <%= simple_form_for [current_user, @trip, @itinerary] do |f| %>
+        <%= f.input :date %>
+        <%= f.input :comments %>
+        <div class="text-end">
+          <%= f.button :submit, "Save", class:"brown-button" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>

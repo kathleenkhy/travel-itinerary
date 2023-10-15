@@ -1,0 +1,21 @@
+<body class="container-color">
+<div class="container mt-5">
+<h1 class="mb-4">All trips planned</h1>
+  <% @trips.each do |trip| %>
+    <%= link_to user_trip_path(current_user, trip), class:"link-text" do %>
+      <div class="row">
+        <div class="trip-card col-2 ms-3 mb-2">
+          <p class="day-text mb-0 "><%= trip.start.strftime("%a") %></p>
+          <h3 class="mb-0"><%= trip.start.day %></h3>
+          <p class="month-text mb-0"><%= trip.start.strftime("%b") %></p>
+        </div>
+
+        <div class="trip-card col-9 d-flex flex-column justify-content-center mb-2">
+          <h4><%= trip.name %></h4>
+          <p class="mb-0"><%= trip.country %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</body>
